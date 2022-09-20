@@ -12,7 +12,7 @@ const colors = [
   'red',
   'purple',
   'green',
-  'blue'
+  'yellow'
 ]
 
 const lTetromino = [
@@ -182,14 +182,14 @@ startBtn.addEventListener('click', () => {
     timerId = null
   } else {
     draw()
-    timerId = setInterval(moveDown, 1000)
+    timerId = setInterval(moveDown, 400)
     nextRandom = Math.floor(Math.random()*theTetrominoes.length)
     displayShape()
   }
 })
 
 
-//add score
+//ajouter score
 function addScore() {
   for (let i = 0; i < 199; i +=width) {
     const row = [i, i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9]
@@ -216,6 +216,5 @@ function gameOver() {
     clearInterval(timerId)
   }
 }
-
 
 })
